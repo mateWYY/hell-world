@@ -1,39 +1,34 @@
 import Router from 'vue-router'
 import Vue from 'vue'
-import home from './page/home/home'
-import find from './page/find/find'
-import clss from './page/class/class'
-import shop from './page/shop/shop'
-import user from './page/user/user'
-import dexTable from './dexTable'
+import login from '@/page/login.vue'
+import home from '@/page/home.vue'
+import list from '@/page/list.vue'
+import user from '@/page/user.vue'
+import add from '@/page/add.vue'
 
 Vue.use(Router)
 
 export default new Router({
-    routers: [{
+    routes: [{
         path: '/',
-        name: 'dexTable',
-        component: dexTable,
+        name: 'login',
+        component: login,
+    },{
+        path: '/home',
+        name: 'home',
+        component: home,
         children: [{
-            path: '/home',
-            name: 'home',
-            component: home
-        }, {
-            path: '/clss',
-            name: 'clss',
-            component: clss
-        }, {
-            path: '/find',
-            name: 'find',
-            component: find
-        }, {
-            path:'/shop',
-            name: 'shop',
-            component: shop
-        }, {
-            path: '/user',
+            path: 'list',
+            name: 'list',
+            component: list
+        },{
+            path: 'user',
             name: 'user',
             component: user
         }]
+    },{
+        path:'/add',
+        name:'add',
+        component: add
     }]
 })
