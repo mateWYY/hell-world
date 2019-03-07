@@ -1,7 +1,9 @@
 <template>
     <div>
         <p>个人信息</p>
-        <div class="btn">添加</div>
+        <router-link to="/add">
+            <div class="btn">添加</div>
+        </router-link>
     </div>
 </template>
 
@@ -9,11 +11,6 @@
     export default {
         name: "user",
         methods: {
-            btn() {
-                this.$router.push({
-                    path: 'add'
-                })
-            }
         }
     }
 </script>
